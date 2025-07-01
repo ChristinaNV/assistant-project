@@ -16,8 +16,31 @@
 touch %ИМЯ_ФАЙЛА% или mkdir %ИМЯ_ДИРЕКТОРИИ%
 
 ИМЯ@MacBook-Air-ИМЯ % ls
+
 ИМЯ@MacBook-Air-ИМЯ % cd Documents
+
 ИМЯ@MacBook-Air-ИМЯ documents % mkdir project
+
+
+### Создать удаленный депозиторий на GitHub
+
+
+Зайти в свой профиль на GitHub. Далее выбрать *Repositories* --> *New*.
+Задаем имя репозиторию *project*. 
+
+
+Теперь необходимо соединить его с нашей папкой. 
+Откройте консоль, перейдите в каталог локального репозитория и введите команду git remote add
+
+ИМЯ@MacBook-Air-ИМЯ project % git remote add origin git@github.com:ИМЯ/assistant-project.git
+
+ИМЯ@MacBook-Air-ИМЯ project % git remote -v
+
+Должно появится две строчки:
+
+origin    git@github.com:%ИМЯ_АККАУНТА%/%ИМЯ-ПРОЕКТА%.git (fetch)
+
+origin    git@github.com:%ИМЯ_АККАУНТА%/%ИМЯ-ПРОЕКТА%.git (push) 
 
 
 ### Инициализировать Git
@@ -31,24 +54,26 @@ touch %ИМЯ_ФАЙЛА% или mkdir %ИМЯ_ДИРЕКТОРИИ%
 
 
 ИМЯ@MacBook-Air-ИМЯ project % touch Text.txt
+
 ИМЯ@MacBook-Air-ИМЯ project % ls
 
-И проверить статус:
+*И проверить статус:*
 
 ИМЯ@MacBook-Air-ИМЯ project % git status
 
-Получаем такое сообщение: *No commits yet
+Получаем такое сообщение: _No commits yet
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	Text.txt
 
-nothing added to commit but untracked files present (use "git add" to track)*
+nothing added to commit but untracked files present (use "git add" to track)_
 
 ### Необходимо добавить файл в комит и передать его в GitHub
 
 
 ИМЯ@MacBook-Air-ИМЯ project % git add --all
+
 ИМЯ@MacBook-Air-ИМЯ project % git status
 
 
@@ -56,8 +81,14 @@ nothing added to commit but untracked files present (use "git add" to track)*
 
 
 ИМЯ@MacBook-Air-ИМЯ project % git commit -m 'Обучение'
-ИМЯ@MacBook-Air-ИМЯ project % git push
+
+ИМЯ@MacBook-Air-ИМЯ project % git push --set-upstream origin main 
+
+(при первом пуше в GitHub. Далее можно будет просто указывать git push)
+
 
 
 ### Проверить в GitHub что появился наш комит
 
+
+Обновить страничку в личном кабинете и появится наш проект и наш комит.
