@@ -47,4 +47,17 @@ nothing added to commit but untracked files present (use "git add" to track)*
 
 ### Необходимо добавить файл в комит и передать его в GitHub
 
+
+ИМЯ@MacBook-Air-ИМЯ project % git add --all
 ИМЯ@MacBook-Air-ИМЯ project % git status
+
+
+#### При проверке статуса наш файл приобрел зеленый цвет. Далее его необходимо закомитить и передать его в GitHub
+
+
+ИМЯ@MacBook-Air-ИМЯ project % git commit -m 'Обучение'
+ИМЯ@MacBook-Air-ИМЯ project % git push
+
+
+### Проверить в GitHub что появился наш комит
+
