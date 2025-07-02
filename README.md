@@ -96,18 +96,11 @@ nothing added to commit but untracked files present (use "git add" to track)_
 
 ИМЯ@MacBook-Air-ИМЯ project % git status
 
-
-```mermaid
-graph LR;
   untracked -- "git add" --> staged;
   staged -- "git commit -m" --> tracked/comitted;
   staged -- "Изменить данные в файле" --> modified (+ tracked);
   modified -- "git add" --> staged (+ tracked);
   staged -- "git commit -m" --> tracked/comitted;
-
-%% стрелка без текста для примера: 
-  A --> B;
-``` 
 
 
 ###  Передать его в GitHub
